@@ -1,0 +1,166 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<div class="container">
+  <div class="row">
+
+    <!--WS-0001-->
+    <div class="col-md-6 col-xl-3">
+      <div class="card m-b-30">
+        <div class="card-body row" style="background-color: #E9ECEF">
+
+          <div class="col-6 card-title align-self-center mb-0">
+            <h5>WS-0001</h5>
+          </div>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Handlers:</li>
+          <ol>
+            <li>-</li>
+          </ol>
+          <li class="list-group-item">Outputs:</li>
+          <ol>
+            <li>Console</li>
+          </ol>
+        </ul>
+      </div>
+    </div>
+    <!--WS-0002-->
+    <div class="col-md-6 col-xl-3">
+      <div class="card m-b-30">
+        <div class="card-body row" style="background-color: #E9ECEF">
+
+          <div class="col-6 card-title align-self-center mb-0">
+            <h5>WS-0002</h5>
+          </div>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Handlers:</li>
+          <ol>
+            <li>padToMultiple</li>
+          </ol>
+          <li class="list-group-item">Outputs:</li>
+          <ol>
+            <li>Console</li>
+          </ol>
+        </ul>
+      </div>
+    </div>
+    <!--WS-0003-->
+    <div class="col-md-6 col-xl-3">
+      <div class="card m-b-30">
+        <div class="card-body row" style="background-color: #E9ECEF">
+
+          <div class="col-6 card-title align-self-center mb-0">
+            <h5>WS-0003</h5>
+          </div>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Handlers:</li>
+          <ol>
+            <li>trim</li>
+            <li>padToMultiple</li>
+          </ol>
+          <li class="list-group-item">Outputs:</li>
+          <ol>
+            <li>File</li>
+          </ol>
+        </ul>
+      </div>
+    </div>
+    <!--WS-0004-->
+    <div class="col-md-6 col-xl-3">
+      <div class="card m-b-30">
+        <div class="card-body row" style="background-color: #E9ECEF">
+
+          <div class="col-6 card-title align-self-center mb-0">
+            <h5>WS-0004</h5>
+          </div>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Handlers:</li>
+          <ol>
+            <li>trim</li>
+            <li>padToMultiple</li>
+            <li>addTimeStamp</li>
+          </ol>
+          <li class="list-group-item">Outputs:</li>
+          <ol>
+            <li>File</li>
+            <li>Console</li>
+          </ol>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="col-md-6 col-xl-3">
+      <div class="card m-b-30">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          +
+        </button>
+      </div>
+    </div>
+
+
+    <!--    Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add new configuration</h5>
+          </div>
+          <div class="modal-body">
+            <form #addForm="ngForm" (ngSubmit)="onAddEmloyee(addForm)">
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label">Sensor model*</label>
+                <input type="text" class="form-control" id="recipient-name" [(ngModel)]="config.model">
+              </div>
+
+              <div class="mb-3">
+                <label class="col-form-label">Handlers:</label>
+              </div>
+              <div class="mb-3">
+                <select #handlers>
+                  <option>trim</option>
+                  <option>paddingToMultiple</option>
+                  <option>addTimeStamp</option>
+                </select>
+                <button type="button" (click)="addHero(handlers.value)"> ></button>
+                <button type="button" (click)="deleteValue(heroValue.value)"> <</button>
+                <select multiple #heroValue>
+                  <option *ngFor="let hero of heroes"> {{hero}}</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <div class="mb-3">
+                  <label class="col-form-label">Outputs:</label>
+                </div>
+                <select #outputs>
+                  <option>file</option>
+                  <option>console</option>
+                </select>
+                <button type="button" (click)="addValueToOutputs(outputs.value)"> ></button>
+                <button type="button" (click)="deleteValueForOutputs(outputVal.value)"> <</button>
+                <select multiple #outputVal>
+                  <option *ngFor="let hero of outputsArr"> {{hero}}</option>
+                </select>
+              </div>
+
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button (click)="addConfig()" class="btn btn-primary">Add</button>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--    end of modal-->
+
+
+  </div>
+</div>

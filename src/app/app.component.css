@@ -1,0 +1,25 @@
+div {
+  color: red;
+
+}
+
+table, th, td, thead {
+  border: 1px solid black;
+}
+
+.form-control {
+  width: 20%;
+}
+
+#demoFont {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 39px;
+  letter-spacing: 4.4px;
+  word-spacing: 4px;
+  color: #ff000e;
+  font-weight: 700;
+  text-decoration: none solid rgb(68, 68, 68);
+  font-style: normal;
+  font-variant: normal;
+  text-transform: uppercase;
+}
